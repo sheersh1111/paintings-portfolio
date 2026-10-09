@@ -18,6 +18,23 @@ import modern5 from './assets/modern-5.png';
 import modern6 from './assets/modern-6.jpg';
 import modern7 from './assets/modern-7.jpg';
 import modern8 from './assets/modern-8.jpg';
+// --- IMPORT NEW MODERN & ANIME ASSETS ---
+import swanImg from './assets/modern-9.jpg';
+import templeImg from './assets/modern-10.png';
+import bonsaiImg from './assets/modern-11.png';
+import lighthouseImg from './assets/modern-12.jpg';
+import streetImg from './assets/modern-13.jpg';
+import valleyImg from './assets/modern-14.jpg';
+import autumnImg from './assets/modern-15.jpg';
+import lampImg from './assets/modern-16.jpg';
+import goldMoonImg from './assets/modern-17.jpg';
+import lanternBranchImg from './assets/modern-18.png';
+import waterfallMoonImg from './assets/modern-19.jpg';
+import darkShipImg from './assets/modern-20.jpg';
+import mistyDeerImg from './assets/modern-21.png';
+// --- IMPORT WALL ART MIXER ASSET ---
+import mixer1Img from './assets/mixer-1.png';
+import profileImg from './assets/img1.jpeg'; // (or .jpeg / .png depending on your file extension)
 
 // --- MOCK PAINTINGS DATA (Updated with your 3 categories) ---
 // Note: Once you place your images in src/assets/, you can import them like:
@@ -28,7 +45,7 @@ const PAINTINGS = [
   {
     id: 1,
     title: "Echoes of the Sacred Forest",
-    category: "Tribal Arts",
+    category: "Modern Paintings",
     image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80",
     summary: "Rooted in ancient indigenous storytelling and earth pigments.",
     story: "Drawing directly from folkloric tales passed down through generations, this canvas uses traditional motifs and mineral hues. It serves as a visual bridge to ancient belief systems where nature and tribal roots intertwine."
@@ -100,7 +117,7 @@ const PAINTINGS = [
   {
     id: 10,
     title: "The Ronin's Crimson Blade",
-    category: "Modern Paintings",
+    category: "Anime Arts",
     image: modern1,
     summary: "A powerful minimalist ink-wash composition of a wandering samurai accented by vibrant splashes of crimson.",
     story: "Blending traditional Eastern iconography with sharp contemporary minimalism, this artwork captures a solitary ronin standing in quiet vigilance. The monochromatic grey tones of the garments and conical hat evoke a sense of timeless wandering, while violent splashes and strokes of brilliant crimson inject a raw, pulsing energy—representing honor, bloodline, and the razor-thin edge between stillness and conflict."
@@ -108,7 +125,7 @@ const PAINTINGS = [
   {
     id: 11,
     title: "Tempest in Monochrome",
-    category: "Modern Paintings",
+    category: "Anime Arts",
     image: modern2,
     summary: "A dramatic, fluid ink-wash composition of a warrior emerging from a swirling storm of smoke and shadows.",
     story: "Rendered entirely in dramatic shades of charcoal and ash, this contemporary piece evokes the untamed fury of a storm. A solitary fighter stands resolute as dark ink billows and shatters like smoke around them, their blade planted firmly in the turbulence. It explores themes of internal resilience, chaos, and the quiet eye of the storm found within disciplined mastery."
@@ -124,7 +141,7 @@ const PAINTINGS = [
   {
     id: 13,
     title: "Echoes of the Inkstorm Vanguard",
-    category: "Modern Paintings",
+    category: "Anime Arts",
     image: modern4,
     summary: "A sweeping panoramic ink composition capturing a line of warriors marching through swirling tempest clouds.",
     story: "Flowing like a traditional Chinese scroll reinterpreted through modern dark fantasy, this sweeping panoramic piece portrays an army marching resolutely into a chaotic tempest of swirling ink and mountains. A single crimson banner trails behind them like a streak of fire, cutting through the monochromatic turbulence. It evokes the epic scale of endurance, unity, and courage facing the unknown."
@@ -132,7 +149,7 @@ const PAINTINGS = [
   {
     id: 14,
     title: "Confrontation with the Abyss",
-    category: "Modern Paintings",
+    category: "Anime Arts",
     image: modern5,
     summary: "A solitary warrior standing eye-to-eye with a colossal, shadowy dragon amidst swirling monochrome smoke.",
     story: "A masterclass in scale and tension, this artwork captures the ultimate standoff between a solitary swordsman and a colossal, serpentine dragon carved from shadow and smoke. Glowing eyes pierce through the swirling haze, creating an intense dialogue between mortal bravery and ancient, primordial power. It is a visual testament to facing one's greatest fears head-on."
@@ -140,7 +157,7 @@ const PAINTINGS = [
   {
     id: 15,
     title: "Portrait of the Untamed (Toji)",
-    category: "Modern Paintings",
+    category: "Anime Arts",
     image: modern6,
     summary: "A gritty, high-contrast monochrome portrait highlighting raw intensity and fierce character expression.",
     story: "Striking and unapologetically raw, this high-contrast portrait captures a battle-hardened figure framed by textured dark ink, scars, and sharp piercing gaze. The stark monochrome palette accented by distressed urban typography elements bridges traditional graphic illustration with gritty modern character design, symbolizing untamed strength and survival against all odds."
@@ -148,15 +165,135 @@ const PAINTINGS = [
   {
     id: 16,
     title: "Eclipse of the Crimson Gate",
-    category: "Modern Paintings",
+    category: "Anime Arts",
     image: modern7,
     summary: "A solitary silhouette standing before a blazing red solar eclipse framed by dead, jagged tree branches.",
     story: "Bathed in an apocalyptic glow, this surreal landscape features a lone figure gazing out toward a blazing crimson ring eclipsing a dark, brooding sky. Framed by skeletal, jagged tree branches that claw at the horizon, the piece evokes a powerful sense of transition, mystery, and the haunting beauty of a world caught between dusk and destruction."
+  },
+  {
+    id: 17,
+    title: "Crows of the Red Moon (Itachi)",
+    category: "Anime Arts",
+    image: modern8,
+    summary: "A vibrant, high-contrast composition of a masked master framed by swirling black crows and a blood-red backdrop.",
+    story: "Drenched in high-contrast blacks, deep crimsons, and striking pinks, this piece depicts a legendary shinobi framed by a flock of sharp-eyed crows and a glowing red moon. Balancing quiet sorrow with lethal precision, the intricate layering of feathered wings and expressive line-work creates an iconic pop-culture masterpiece that hums with emotional intensity and formidable strength."
+  },
+  {
+    id: 18,
+    title: "The Silent Passage of the Swan",
+    category: "Modern Paintings",
+    image: swanImg, // or variable name for your new swan asset
+    summary: "A hauntingly serene monochrome painting of a solitary swan gliding through a misty, moonlit river.",
+    story: "Set against a backdrop of weeping willows and a luminous full moon, this atmospheric monochrome piece captures a profound sense of isolation and tranquility. The gentle ripples on the water and the soft glow piercing through the heavy canopy evoke the quiet poetry of midnight waterways and solitary grace."
+  },
+  {
+    id: 19,
+    title: "Sanctuary Above the Cascades",
+    category: "Modern Paintings",
+    image: templeImg, // or variable name for your pagoda asset
+    summary: "A traditional ink-wash masterpiece depicting a pagoda perched above towering mist-shrouded mountain peaks.",
+    story: "Inspired by classical Eastern landscape traditions, this dynamic vertical composition features a traditional pagoda and arched bridge hovering above powerful rushing waterfalls. Layered ink washes create an ethereal atmosphere where craggy cliffs and sweeping mists merge into a timeless meditation on nature's majesty."
+  },
+  {
+    id: 20,
+    title: "The Bonsai of the Crimson Sun",
+    category: "Modern Paintings",
+    image: bonsaiImg, // or variable name for your bonsai asset
+    summary: "A striking fusion of an ancient windswept bonsai tree set against a massive, textured copper-red sun.",
+    story: "Bridging structural elegance with bold chromatic impact, this piece highlights a masterfully weathered bonsai tree rooted in ancient soil. Behind its detailed foliage, a giant crimson-orange sun casts a warm, timeless glow across a distant forest line, creating an arresting focal point for any modern interior wall."
+  },
+  {
+    id: 21,
+    title: "Beacon in the Tempest",
+    category: "Modern Paintings",
+    image: lighthouseImg, // or variable name for your lighthouse asset
+    summary: "An oil-textured canvas portraying a steadfast lighthouse cutting through a churning, stormy ocean night.",
+    story: "Embodying resilience in the face of chaos, this dramatic painting captures a stone lighthouse standing firm against towering, turbulent waves and a bruised, charcoal sky. Its warm beacon pierces the gloom, offering a universal symbol of hope, guidance, and unwavering stability amid life's fiercest gales."
+  },
+  {
+    id: 22,
+    title: "Midnight Rain on Boulevard Saint-Michel",
+    category: "Modern Paintings",
+    image: streetImg, // or variable name for your Parisian street asset
+    summary: "A textured expressionist scene of a wet Parisian cobblestone street illuminated by golden streetlamps.",
+    story: "Capturing the romantic melancholy of a rainy night in the city, this piece uses rich impasto textures and warm golden reflections shimmering across wet pavement. Classic architecture and glowing lanterns guide the eye down a quiet avenue, evoking the sensory coziness of urban stillness after a downpour."
+  },
+  {
+    id: 23,
+    title: "Valley of Wildflower Whispers",
+    category: "Modern Paintings",
+    image: valleyImg, // or variable name for your valley asset
+    summary: "A vibrant impressionistic landscape of rolling green hills, a stone cottage, and a meadow bursting with wildflowers.",
+    story: "Radiating warmth and pastoral charm, this textured painting depicts a sun-drenched valley filled with red and blue wildflowers lining a winding dirt path. Nestled against rolling emerald hills and a gentle stream, the rustic stone cottage serves as an idyllic retreat into untouched countryside serenity."
+  },
+  {
+    id: 24,
+    title: "Sunbeams Through Autumn Pines",
+    category: "Modern Paintings",
+    image: autumnImg, // or variable name for your autumn asset
+    summary: "A crisp wilderness landscape where brilliant sunbeams pierce through amber autumn foliage and misty clouds.",
+    story: "Marking the transition of seasons, this artwork balances the cool tones of distant blue mountains with the fiery brilliance of orange and amber autumn leaves. A luminous sun cuts sharp diagonal rays through towering pines and fluffy clouds, capturing the crisp, awakening energy of a crisp wilderness morning."
+  },
+  {
+    id: 25,
+    title: "Twilight Lanterns by the Wall",
+    category: "Modern Paintings",
+    image: lampImg, // or variable name for your twin lamp asset
+    summary: "A moody twilight composition of classic double streetlamps glowing warmly against a fiery orange horizon.",
+    story: "Framed against a dramatic gradient of twilight greys and burning amber, a vintage double-headed streetlamp stands guard along an ancient stone ledge. The soft, diffused glow creates an intimate atmosphere of transition—the brief, magical window where day surrenders completely to the quiet night."
+  },
+  {
+    id: 26,
+    title: "The Golden Moon & Emerald Peaks",
+    category: "Modern Paintings",
+    image: goldMoonImg, // or variable name for your gold/teal textured asset
+    summary: "A luxurious mixed-media composition featuring textured teal mountain layers framing a luminous gold-leaf moon.",
+    story: "Blending tactile relief texture with striking color contrast, this opulent wall art mixer presents jagged emerald-teal peaks split by a cascading waterfall, all dominated by a massive, textured gold-leaf moon. It brings a sophisticated, contemporary luxury and organic depth into architectural interior spaces."
+  },
+  {
+    id: 27,
+    title: "Blossoms of the Blood-Red Moon",
+    category: "Anime Arts",
+    image: lanternBranchImg, // or variable name for your branch/lantern asset
+    summary: "A striking Japanese aesthetic illustration of blooming red cherry blossoms and a glowing lantern under a crimson sun.",
+    story: "Rooted in classic East Asian artistic traditions, this high-contrast piece features intricate dark branches heavy with vibrant red blossoms and an ornate hanging temple lantern. Framed against a massive, textured blood-red sun and delicate ink splatters, it bridges traditional motif with modern graphic intensity."
+  },
+  {
+    id: 28,
+    title: "Midnight Cascade under the Golden Full Moon",
+    category: "Modern Paintings",
+    image: waterfallMoonImg,
+    summary: "A dramatic nocturnal oil painting of a cascading waterfall illuminated by a massive, textured gold-hued moon.",
+    story: "Wrapped in deep shadows and rich dark textures, this atmospheric canvas captures a powerful waterfall plunging into a quiet pool under the brilliant light of a colossal, textured golden full moon. The interplay of nocturnal darks and luminous highlights evokes a profound sense of midnight mystery, raw nature, and eternal cycles."
+  },
+  {
+    id: 29,
+    title: "The Phantom Galleon in Charcoal",
+    category: "Modern Paintings",
+    image: darkShipImg,
+    summary: "A haunting, textured charcoal sketch of an ancient multi-masted sailing ship emerging through a stormy sea.",
+    story: "Rendered in raw, moody charcoal and sweeping strokes, this striking piece portrays a majestic tall ship cutting through turbulent waters beneath a pale, obscured moon. Every intricate rigging line and billowing shadow tells a tale of long ocean voyages, high-seas mystery, and the relentless pull of uncharted horizons."
+  },
+  {
+    id: 30,
+    title: "Guardian of the Misty Pine Forest",
+    category: "Modern Paintings",
+    image: mistyDeerImg,
+    summary: "A tranquil monochrome composition of a magnificent stag standing sentinel among towering, mist-shrouded pines.",
+    story: "Bathed in ethereal shades of grey and charcoal, this minimalist nature piece features a majestic stag with sweeping antlers gazing into a dense, fog-laden pine forest. The vertical symmetry of the towering trees creates an atmosphere of deep silence, stealthy wildlife, and untouched wilderness serenity."
+  },
+  {
+    id: 31,
+    title: "Monochrome Chronicles Triptych",
+    category: "Wall Art Mixers",
+    image: mixer1Img,
+    summary: "A curated multi-panel wall art arrangement fusing tempestuous warriors, dragon encounters, and stark character portraits.",
+    story: "Designed specifically for modern interior spaces craving visual depth and narrative variety, this multi-panel wall art mixer curates contrasting scales of dramatic ink-wash art. By pairing the flowing fury of a lone swordsman with a colossal dragon standoff and a gritty character profile, it creates an immersive storytelling gallery experience on a single wall."
   }
   
 ];
 
-const CATEGORIES = ["All", "Tribal Arts", "Modern Paintings", "Wall Art Mixers"];
+const CATEGORIES = ["All", "Tribal Arts", "Modern Paintings",, "Anime Arts", "Wall Art Mixers"];
 
 // --- NAVIGATION BAR ---
 function Navbar() {
@@ -307,7 +444,7 @@ function Home() {
 // --- CONTACT PAGE ---
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id"; 
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpeqjyg"; 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -343,7 +480,7 @@ function Contact() {
             {/* Passport Size Image Placeholder */}
             <div className="w-32 h-32 mx-auto mb-4 rounded-xl overflow-hidden bg-stone-200 border-2 border-stone-100 shadow-inner">
               <img 
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" 
+                src={profileImg} 
                 alt="Artist Portrait" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
@@ -354,11 +491,11 @@ function Contact() {
             <div className="space-y-3 text-left border-t border-stone-100 pt-5 text-sm text-stone-600">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-amber-800 shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 78796 11986</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-amber-800 shrink-0" />
-                <span className="truncate">artist.studio@example.com</span>
+                <span className="truncate">sheersh1111@gmail.com</span>
               </div>
               {/* WhatsApp Direct Chat Button */}
               <div className="mt-6 pt-5 border-t border-stone-100">
@@ -420,6 +557,28 @@ function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Phone Number *</label>
+                  <input 
+                    type="tel" 
+                    name="phone" 
+                    required
+                    placeholder="+91 98765 43210"
+                    className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Company or Studio Name</label>
+                  <input 
+                    type="text" 
+                    name="company" 
+                    placeholder="Optional (Studio / Gallery)"
+                    className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Company or Studio Name</label>
                   <input 
                     type="text" 
@@ -437,6 +596,7 @@ function Contact() {
                     <option value="General Inquiry">General Inquiry / Open</option>
                     <option value="Tribal Arts">Tribal Arts</option>
                     <option value="Modern Paintings">Modern Paintings</option>
+                    <option value="Anime Arts">Anime Arts</option>
                     <option value="Wall Art Mixers">Wall Art Mixers</option>
                     <option value="Custom Commission">Custom Commission</option>
                   </select>
