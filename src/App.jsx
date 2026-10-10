@@ -384,6 +384,7 @@ function Home() {
               <img 
                 src={art.image} 
                 alt={art.title} 
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-stone-800 text-xs font-medium px-2.5 py-1 rounded-md shadow-xs">
