@@ -35,6 +35,7 @@ import mistyDeerImg from './assets/modern-21.png';
 // --- IMPORT WALL ART MIXER ASSET ---
 import mixer1Img from './assets/mixer-1.png';
 import profileImg from './assets/img1.jpeg'; // (or .jpeg / .png depending on your file extension)
+import mixer2Img from './assets/mixer-2.png';
 
 // --- MOCK PAINTINGS DATA (Updated with your 3 categories) ---
 // Note: Once you place your images in src/assets/, you can import them like:
@@ -289,6 +290,14 @@ const PAINTINGS = [
     image: mixer1Img,
     summary: "A curated multi-panel wall art arrangement fusing tempestuous warriors, dragon encounters, and stark character portraits.",
     story: "Designed specifically for modern interior spaces craving visual depth and narrative variety, this multi-panel wall art mixer curates contrasting scales of dramatic ink-wash art. By pairing the flowing fury of a lone swordsman with a colossal dragon standoff and a gritty character profile, it creates an immersive storytelling gallery experience on a single wall."
+  },
+  {
+    id: 32,
+    title: "Nocturnal Elegance Triptych",
+    category: "Wall Art Mixers",
+    image: mixer2Img,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
   }
   
 ];
