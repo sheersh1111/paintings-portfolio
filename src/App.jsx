@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Palette, Mail, Phone, X, Send, Compass, Filter , MessageCircle} from 'lucide-react';
+import { Palette, Mail, Phone, X, Send, Compass, Filter, MessageCircle } from 'lucide-react';
 
 // --- IMPORT LOCAL IMAGES FROM src/assets/ ---
 import tribal1 from './assets/tribal-1.jpeg';
@@ -18,6 +18,13 @@ import modern5 from './assets/modern-5.png';
 import modern6 from './assets/modern-6.jpg';
 import modern7 from './assets/modern-7.jpg';
 import modern8 from './assets/modern-8.jpg';
+import metal1 from './assets/metal-1.jpg';
+import metal2 from './assets/metal-2.jpg';
+import metal3 from './assets/metal-3.png';
+import metal4 from './assets/metal-4.jpg';
+import metal5 from './assets/metal-5.jpg';
+import metal6 from './assets/metal-6.jpg';
+import metal7 from './assets/metal-7.jpg';
 // --- IMPORT NEW MODERN & ANIME ASSETS ---
 import swanImg from './assets/modern-9.jpg';
 import templeImg from './assets/modern-10.png';
@@ -45,7 +52,7 @@ import mixer2Img from './assets/mixer-2.png';
 const PAINTINGS = [
   {
     id: 1,
-    title: "Echoes of the Sacred Forest",
+    title: "1. Echoes of the Sacred Forest",
     category: "Modern Paintings",
     image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80",
     summary: "Rooted in ancient indigenous storytelling and earth pigments.",
@@ -53,7 +60,7 @@ const PAINTINGS = [
   },
   {
     id: 2,
-    title: "Solitude in Neon & Concrete",
+    title: "2. Solitude in Neon & Concrete",
     category: "Modern Paintings",
     image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=80",
     summary: "Juxtaposing organic silhouettes with stark urban geometry.",
@@ -61,7 +68,7 @@ const PAINTINGS = [
   },
   {
     id: 3,
-    title: "The Sacred Grove & The Harvest Rhythm",
+    title: "3. The Sacred Grove & The Harvest Rhythm",
     category: "Tribal Arts",
     image: tribal1,
     summary: "A panoramic narrative of indigenous community life, centered around a sacred guardian tree, cattle, and seasonal harvest rituals.",
@@ -69,7 +76,7 @@ const PAINTINGS = [
   },
   {
     id: 4,
-    title: "Whispers of the Bamboo Grove & The River Path",
+    title: "4. Whispers of the Bamboo Grove & The River Path",
     category: "Tribal Arts",
     image: tribal2,
     summary: "A verdant depiction of life along a sacred forest stream, framed by towering bamboo stalks and textured wildlife.",
@@ -77,7 +84,7 @@ const PAINTINGS = [
   },
   {
     id: 5,
-    title: "The Canopy of Ancestral Dreams (Tree of Life)",
+    title: "5. The Canopy of Ancestral Dreams (Tree of Life)",
     category: "Tribal Arts",
     image: tribal3,
     summary: "A magnificent depiction of the cosmic Tree of Life, bridging the earthy soil with an explosion of amber and emerald foliage.",
@@ -85,7 +92,7 @@ const PAINTINGS = [
   },
   {
     id: 6,
-    title: "Symphony of the Avian Canopy",
+    title: "6. Symphony of the Avian Canopy",
     category: "Tribal Arts",
     image: tribal4,
     summary: "A vibrant ecosystem of patterned birds populating a sweeping violet-trunked tree above a tranquil rural homestead.",
@@ -93,7 +100,7 @@ const PAINTINGS = [
   },
   {
     id: 7,
-    title: "The Stags of the Forest Canopy",
+    title: "7. The Stags of the Forest Canopy",
     category: "Tribal Arts",
     image: tribal5,
     summary: "A mystical depiction of stags whose branching antlers transform into the very forest canopy that shelters them.",
@@ -101,7 +108,7 @@ const PAINTINGS = [
   },
   {
     id: 8,
-    title: "The Serpentine Vine of Gold",
+    title: "8. The Serpentine Vine of Gold",
     category: "Tribal Arts",
     image: tribal6,
     summary: "A mesmerizing, winding crimson tree rising against a brilliant golden backdrop, sheltering nesting birds.",
@@ -109,7 +116,7 @@ const PAINTINGS = [
   },
   {
     id: 9,
-    title: "The Totem of Ascending Birds",
+    title: "9. The Totem of Ascending Birds",
     category: "Tribal Arts",
     image: tribal7,
     summary: "A vertical tapestry where the tree trunk seamlessly morphs into stacked, patterned birds climbing toward the canopy.",
@@ -117,7 +124,7 @@ const PAINTINGS = [
   },
   {
     id: 10,
-    title: "The Ronin's Crimson Blade",
+    title: "10. The Ronin's Crimson Blade",
     category: "Anime Arts",
     image: modern1,
     summary: "A powerful minimalist ink-wash composition of a wandering samurai accented by vibrant splashes of crimson.",
@@ -125,7 +132,7 @@ const PAINTINGS = [
   },
   {
     id: 11,
-    title: "Tempest in Monochrome",
+    title: "11. Tempest in Monochrome",
     category: "Anime Arts",
     image: modern2,
     summary: "A dramatic, fluid ink-wash composition of a warrior emerging from a swirling storm of smoke and shadows.",
@@ -133,7 +140,7 @@ const PAINTINGS = [
   },
   {
     id: 12,
-    title: "The Celestial Sentinel",
+    title: "12. The Celestial Sentinel",
     category: "Modern Paintings",
     image: modern3,
     summary: "A stippled pointillism piece of a cloaked cosmic knight crowned with a stellar halo, gripping a gleaming broadsword.",
@@ -141,7 +148,7 @@ const PAINTINGS = [
   },
   {
     id: 13,
-    title: "Echoes of the Inkstorm Vanguard",
+    title: "13. Echoes of the Inkstorm Vanguard",
     category: "Anime Arts",
     image: modern4,
     summary: "A sweeping panoramic ink composition capturing a line of warriors marching through swirling tempest clouds.",
@@ -149,7 +156,7 @@ const PAINTINGS = [
   },
   {
     id: 14,
-    title: "Confrontation with the Abyss",
+    title: "14. Confrontation with the Abyss",
     category: "Anime Arts",
     image: modern5,
     summary: "A solitary warrior standing eye-to-eye with a colossal, shadowy dragon amidst swirling monochrome smoke.",
@@ -157,7 +164,7 @@ const PAINTINGS = [
   },
   {
     id: 15,
-    title: "Portrait of the Untamed (Toji)",
+    title: "15. Portrait of the Untamed (Toji)",
     category: "Anime Arts",
     image: modern6,
     summary: "A gritty, high-contrast monochrome portrait highlighting raw intensity and fierce character expression.",
@@ -165,7 +172,7 @@ const PAINTINGS = [
   },
   {
     id: 16,
-    title: "Eclipse of the Crimson Gate",
+    title: "16. Eclipse of the Crimson Gate",
     category: "Anime Arts",
     image: modern7,
     summary: "A solitary silhouette standing before a blazing red solar eclipse framed by dead, jagged tree branches.",
@@ -173,7 +180,7 @@ const PAINTINGS = [
   },
   {
     id: 17,
-    title: "Crows of the Red Moon (Itachi)",
+    title: "17. Crows of the Red Moon (Itachi)",
     category: "Anime Arts",
     image: modern8,
     summary: "A vibrant, high-contrast composition of a masked master framed by swirling black crows and a blood-red backdrop.",
@@ -181,7 +188,7 @@ const PAINTINGS = [
   },
   {
     id: 18,
-    title: "The Silent Passage of the Swan",
+    title: "18. The Silent Passage of the Swan",
     category: "Modern Paintings",
     image: swanImg, // or variable name for your new swan asset
     summary: "A hauntingly serene monochrome painting of a solitary swan gliding through a misty, moonlit river.",
@@ -189,7 +196,7 @@ const PAINTINGS = [
   },
   {
     id: 19,
-    title: "Sanctuary Above the Cascades",
+    title: "19. Sanctuary Above the Cascades",
     category: "Modern Paintings",
     image: templeImg, // or variable name for your pagoda asset
     summary: "A traditional ink-wash masterpiece depicting a pagoda perched above towering mist-shrouded mountain peaks.",
@@ -197,7 +204,7 @@ const PAINTINGS = [
   },
   {
     id: 20,
-    title: "The Bonsai of the Crimson Sun",
+    title: "20. The Bonsai of the Crimson Sun",
     category: "Modern Paintings",
     image: bonsaiImg, // or variable name for your bonsai asset
     summary: "A striking fusion of an ancient windswept bonsai tree set against a massive, textured copper-red sun.",
@@ -205,7 +212,7 @@ const PAINTINGS = [
   },
   {
     id: 21,
-    title: "Beacon in the Tempest",
+    title: "21. Beacon in the Tempest",
     category: "Modern Paintings",
     image: lighthouseImg, // or variable name for your lighthouse asset
     summary: "An oil-textured canvas portraying a steadfast lighthouse cutting through a churning, stormy ocean night.",
@@ -213,7 +220,7 @@ const PAINTINGS = [
   },
   {
     id: 22,
-    title: "Midnight Rain on Boulevard Saint-Michel",
+    title: "22. Midnight Rain on Boulevard Saint-Michel",
     category: "Modern Paintings",
     image: streetImg, // or variable name for your Parisian street asset
     summary: "A textured expressionist scene of a wet Parisian cobblestone street illuminated by golden streetlamps.",
@@ -221,7 +228,7 @@ const PAINTINGS = [
   },
   {
     id: 23,
-    title: "Valley of Wildflower Whispers",
+    title: "23. Valley of Wildflower Whispers",
     category: "Modern Paintings",
     image: valleyImg, // or variable name for your valley asset
     summary: "A vibrant impressionistic landscape of rolling green hills, a stone cottage, and a meadow bursting with wildflowers.",
@@ -229,7 +236,7 @@ const PAINTINGS = [
   },
   {
     id: 24,
-    title: "Sunbeams Through Autumn Pines",
+    title: "24. Sunbeams Through Autumn Pines",
     category: "Modern Paintings",
     image: autumnImg, // or variable name for your autumn asset
     summary: "A crisp wilderness landscape where brilliant sunbeams pierce through amber autumn foliage and misty clouds.",
@@ -237,7 +244,7 @@ const PAINTINGS = [
   },
   {
     id: 25,
-    title: "Twilight Lanterns by the Wall",
+    title: "25. Twilight Lanterns by the Wall",
     category: "Modern Paintings",
     image: lampImg, // or variable name for your twin lamp asset
     summary: "A moody twilight composition of classic double streetlamps glowing warmly against a fiery orange horizon.",
@@ -245,7 +252,7 @@ const PAINTINGS = [
   },
   {
     id: 26,
-    title: "The Golden Moon & Emerald Peaks",
+    title: "26. The Golden Moon & Emerald Peaks",
     category: "Modern Paintings",
     image: goldMoonImg, // or variable name for your gold/teal textured asset
     summary: "A luxurious mixed-media composition featuring textured teal mountain layers framing a luminous gold-leaf moon.",
@@ -253,7 +260,7 @@ const PAINTINGS = [
   },
   {
     id: 27,
-    title: "Blossoms of the Blood-Red Moon",
+    title: "27. Blossoms of the Blood-Red Moon",
     category: "Anime Arts",
     image: lanternBranchImg, // or variable name for your branch/lantern asset
     summary: "A striking Japanese aesthetic illustration of blooming red cherry blossoms and a glowing lantern under a crimson sun.",
@@ -261,7 +268,7 @@ const PAINTINGS = [
   },
   {
     id: 28,
-    title: "Midnight Cascade under the Golden Full Moon",
+    title: "28. Midnight Cascade under the Golden Full Moon",
     category: "Modern Paintings",
     image: waterfallMoonImg,
     summary: "A dramatic nocturnal oil painting of a cascading waterfall illuminated by a massive, textured gold-hued moon.",
@@ -269,7 +276,7 @@ const PAINTINGS = [
   },
   {
     id: 29,
-    title: "The Phantom Galleon in Charcoal",
+    title: "29. The Phantom Galleon in Charcoal",
     category: "Modern Paintings",
     image: darkShipImg,
     summary: "A haunting, textured charcoal sketch of an ancient multi-masted sailing ship emerging through a stormy sea.",
@@ -277,7 +284,7 @@ const PAINTINGS = [
   },
   {
     id: 30,
-    title: "Guardian of the Misty Pine Forest",
+    title: "30. Guardian of the Misty Pine Forest",
     category: "Modern Paintings",
     image: mistyDeerImg,
     summary: "A tranquil monochrome composition of a magnificent stag standing sentinel among towering, mist-shrouded pines.",
@@ -285,7 +292,7 @@ const PAINTINGS = [
   },
   {
     id: 31,
-    title: "Monochrome Chronicles Triptych",
+    title: "31. Monochrome Chronicles Triptych",
     category: "Wall Art Mixers",
     image: mixer1Img,
     summary: "A curated multi-panel wall art arrangement fusing tempestuous warriors, dragon encounters, and stark character portraits.",
@@ -293,16 +300,73 @@ const PAINTINGS = [
   },
   {
     id: 32,
-    title: "Nocturnal Elegance Triptych",
+    title: "32. Nocturnal Elegance Triptych",
     category: "Wall Art Mixers",
     image: mixer2Img,
     summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
     story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
-  }
-  
+  },
+  {
+    id: 33,
+    title: "33. Kamado Tanjiro",
+    category: "Metals",
+    image: metal1,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
+  },
+  {
+    id: 34,
+    title: "34. Guts and sword",
+    category: "Metals",
+    image: metal2,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
+  },
+  {
+    id: 35,
+    title: "35. Sukuna and Gojo",
+    category: "Metals",
+    image: metal3,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
+  },
+  {
+    id: 36,
+    title: "36. Zenitsu",
+    category: "Metals",
+    image: metal4,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
+  },
+  {
+    id: 37,
+    title: "37. Itachi Metal HD",
+    category: "Metals",
+    image: metal5,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
+  },
+  {
+    id: 38,
+    title: "38. Kamado Tanjiro -2",
+    category: "Metals",
+    image: metal6,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
+  },
+  {
+    id: 39,
+    title: "39. Inosuke Split Metal",
+    category: "Metals",
+    image: metal7,
+    summary: "A curated three-panel composition curating twilight streetlamps, a stormy coastal lighthouse, and rain-slicked Parisian avenues.",
+    story: "Bringing together the moody romance of dusk and storm, this wall art mixer pairs quiet twilight lanterns with a steadfast lighthouse braving turbulent waves and glowing urban reflections. It creates an immersive, moody narrative across a single display, designed to elevate architectural spaces with rich oil textures and atmospheric depth."
+  },
+
+
 ];
 
-const CATEGORIES = ["All", "Tribal Arts", "Modern Paintings",, "Anime Arts", "Wall Art Mixers"];
+const CATEGORIES = ["All", "Tribal Arts", "Modern Paintings", "Metals", "Anime Arts", "Wall Art Mixers"];
 
 // --- NAVIGATION BAR ---
 function Navbar() {
@@ -315,14 +379,14 @@ function Navbar() {
           <span>Canvas & Stories</span>
         </Link>
         <div className="flex items-center gap-6 text-sm font-medium">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className={`transition-colors ${location.pathname === '/' ? 'text-amber-800 font-semibold' : 'text-stone-600 hover:text-stone-900'}`}
           >
             Gallery
           </Link>
-          <Link 
-            to="/contact" 
+          <Link
+            to="/contact"
             className={`transition-colors ${location.pathname === '/contact' ? 'text-amber-800 font-semibold' : 'text-stone-600 hover:text-stone-900'}`}
           >
             Contact & Commissions
@@ -338,8 +402,8 @@ function Home() {
   const [selectedPainting, setSelectedPainting] = useState(null);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredPaintings = activeCategory === "All" 
-    ? PAINTINGS 
+  const filteredPaintings = activeCategory === "All"
+    ? PAINTINGS
     : PAINTINGS.filter(art => art.category === activeCategory);
 
   return (
@@ -361,11 +425,10 @@ function Home() {
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
-              activeCategory === category
-                ? 'bg-stone-900 text-white shadow-xs'
-                : 'bg-white text-stone-600 border border-stone-200 hover:border-stone-400'
-            }`}
+            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${activeCategory === category
+              ? 'bg-stone-900 text-white shadow-xs'
+              : 'bg-white text-stone-600 border border-stone-200 hover:border-stone-400'
+              }`}
           >
             {category}
           </button>
@@ -375,15 +438,15 @@ function Home() {
       {/* Gallery Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredPaintings.map((art) => (
-          <div 
-            key={art.id} 
+          <div
+            key={art.id}
             onClick={() => setSelectedPainting(art)}
             className="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-xs hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col"
           >
             <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
-              <img 
-                src={art.image} 
-                alt={art.title} 
+              <img
+                src={art.image}
+                alt={art.title}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -413,16 +476,16 @@ function Home() {
       {selectedPainting && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-xs">
           <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-xl border border-stone-100 relative animate-in fade-in zoom-in duration-200">
-            <button 
+            <button
               onClick={() => setSelectedPainting(null)}
               className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 hover:bg-white text-stone-700 shadow-md transition-all cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
             <div className="aspect-[16/9] w-full overflow-hidden bg-stone-100">
-              <img 
-                src={selectedPainting.image} 
-                alt={selectedPainting.title} 
+              <img
+                src={selectedPainting.image}
+                alt={selectedPainting.title}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -436,7 +499,7 @@ function Home() {
                 <p>{selectedPainting.story}</p>
               </div>
               <div className="mt-8 pt-6 border-t border-stone-100 flex justify-end">
-                <button 
+                <button
                   onClick={() => setSelectedPainting(null)}
                   className="px-5 py-2.5 rounded-lg bg-stone-900 text-white text-sm font-medium hover:bg-stone-800 transition-colors cursor-pointer"
                 >
@@ -454,7 +517,7 @@ function Home() {
 // --- CONTACT PAGE ---
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpeqjyg"; 
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpeqjyg";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -483,15 +546,15 @@ function Contact() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        
+
         {/* Profile Card & Details */}
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-xs text-center">
             {/* Passport Size Image Placeholder */}
             <div className="w-32 h-32 mx-auto mb-4 rounded-xl overflow-hidden bg-stone-200 border-2 border-stone-100 shadow-inner">
-              <img 
-                src={profileImg} 
-                alt="Artist Portrait" 
+              <img
+                src={profileImg}
+                alt="Artist Portrait"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
@@ -509,9 +572,9 @@ function Contact() {
               </div>
               {/* WhatsApp Direct Chat Button */}
               <div className="mt-6 pt-5 border-t border-stone-100">
-                <a 
-                  href="https://wa.me/917879611986?text=Hi,%20I%20visited%20your%20art%20portfolio%20and%20would%20like%20to%20discuss%20an%20inquiry." 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/917879611986?text=Hi,%20I%20visited%20your%20art%20portfolio%20and%20would%20like%20to%20discuss%20an%20inquiry."
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-emerald-600 text-white font-medium text-xs hover:bg-emerald-700 transition-colors shadow-xs cursor-pointer"
                 >
@@ -533,7 +596,7 @@ function Contact() {
             <div className="bg-amber-50 border border-amber-200 text-amber-900 p-6 rounded-xl text-center space-y-2">
               <h3 className="font-serif text-lg">Thank you for reaching out!</h3>
               <p className="text-sm">Your message has been received. I will get back to you shortly.</p>
-              <button 
+              <button
                 onClick={() => setSubmitted(false)}
                 className="mt-4 text-xs font-semibold underline text-amber-800 hover:text-amber-900 cursor-pointer"
               >
@@ -545,20 +608,20 @@ function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Your Name *</label>
-                  <input 
-                    type="text" 
-                    name="name" 
-                    required 
+                  <input
+                    type="text"
+                    name="name"
+                    required
                     placeholder="Jane Doe"
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Email Address *</label>
-                  <input 
-                    type="email" 
-                    name="email" 
-                    required 
+                  <input
+                    type="email"
+                    name="email"
+                    required
                     placeholder="jane@example.com"
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm"
                   />
@@ -568,9 +631,9 @@ function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Phone Number *</label>
-                  <input 
-                    type="tel" 
-                    name="phone" 
+                  <input
+                    type="tel"
+                    name="phone"
                     required
                     placeholder="+91 98765 43210"
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm"
@@ -578,9 +641,9 @@ function Contact() {
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Company or Studio Name</label>
-                  <input 
-                    type="text" 
-                    name="company" 
+                  <input
+                    type="text"
+                    name="company"
                     placeholder="Optional (Studio / Gallery)"
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm"
                   />
@@ -590,16 +653,16 @@ function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Company or Studio Name</label>
-                  <input 
-                    type="text" 
-                    name="company" 
+                  <input
+                    type="text"
+                    name="company"
                     placeholder="Optional (Studio / Gallery)"
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Preferred Art Style</label>
-                  <select 
+                  <select
                     name="art_style"
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm bg-white"
                   >
@@ -615,16 +678,16 @@ function Contact() {
 
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-1.5">Project Details & Message *</label>
-                <textarea 
-                  name="message" 
-                  rows="4" 
-                  required 
+                <textarea
+                  name="message"
+                  rows="4"
+                  required
                   placeholder="Tell me about your project, dimensions, or specific themes you have in mind..."
                   className="w-full px-4 py-2.5 rounded-lg border border-stone-200 focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-sm resize-none"
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-lg bg-stone-900 text-white font-medium text-sm hover:bg-stone-800 transition-colors shadow-xs cursor-pointer"
               >
