@@ -409,14 +409,25 @@ function Home() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
       {/* Header Banner */}
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4">
-          <Compass className="w-3.5 h-3.5" /> Curated Collection
-        </span>
-        <h1 className="text-4xl font-serif font-normal text-stone-900 mb-4">Paintings & Their Stories</h1>
-        <p className="text-stone-600 text-base leading-relaxed">
-          Explore our distinct collections spanning indigenous roots, contemporary abstractions, and mixed gallery walls.
-        </p>
+      {/* Hero Banner with Aesthetic Background */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-stone-900 via-stone-800 to-amber-950 text-white px-6 py-16 sm:py-20 mb-14 shadow-lg border border-stone-800">
+        {/* Subtle Decorative Radial Glow */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-amber-700/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="relative z-10 text-center max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-200 text-xs font-semibold uppercase tracking-widest mb-6">
+            <Compass className="w-3.5 h-3.5" /> Curated Fine Art Collection
+          </span>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight text-white mb-6 leading-tight">
+            Complete Your Walls <span className="text-amber-300 italic font-normal">With Emotions</span>
+          </h1>
+
+          <p className="text-stone-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Paintings &amp; Their Stories — explore our distinct collections spanning indigenous roots, contemporary abstractions, metals, and mixed gallery walls.
+          </p>
+        </div>
       </div>
 
       {/* Category Filter Tabs */}
